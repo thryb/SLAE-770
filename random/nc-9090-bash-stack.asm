@@ -1,9 +1,10 @@
 ;
 ; Linux x86
-; Author: thryb
-; Date: 13-07-16
+; Author:  thryb
+; Date:    13-07-16
 ; Purpose: /bin/nc -lp 9090 -ev/bin/bash
-; SLAE-770 
+; Size:    58 bytes
+; ID:      SLAE-770 
 ;
 
 global _start			
