@@ -2,7 +2,7 @@
 ; Linux x86
 ; Author:  thryb
 ; Date:    13-07-16
-; Purpose: Bind /bin/sh to TCP port 9090
+; Purpose: Bind /bin/zsh to TCP port 9090
 ; Size:    XX bytes
 ; ID:      SLAE-770
 ;
@@ -23,4 +23,5 @@ _start:
 	mov ecx, esp ; mov stack ptr to ecx
 	int 0x80 ; init
 
-	; 2 - bind socket	
+	; 2 - bind socket
+		
