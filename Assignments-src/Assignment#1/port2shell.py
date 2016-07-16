@@ -18,4 +18,6 @@ hex_port = '{0:04X}'.format(l_port)
 h1 = hex_port[0:2]
 h2 = hex_port[2:4]
 
+print "Net order number: %s\n" % hex_port
+
 print "Replace Local port with: \n\\x%s\\x%s" % (h1, h2) 
