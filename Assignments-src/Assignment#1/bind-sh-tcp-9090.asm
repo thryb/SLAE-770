@@ -3,7 +3,7 @@
 ; Author:  thryb
 ; Date:    13-07-16
 ; Purpose: Bind /bin/zsh to TCP port 9090
-; Size:    XX bytes
+; Size:    96 bytes
 ; ID:      SLAE-770
 ;
 
