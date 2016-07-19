@@ -11,7 +11,8 @@ import sys
 if len(sys.argv) == 2:
 	l_port = int(sys.argv[1])
 else:
-	print "Usage: %s <port number>" % str(sys.argv[1])
+	print "Usage: %s <port number>" % str(sys.argv[0])
+	exit(2)
 
 hex_port = '{0:04X}'.format(l_port)
 
