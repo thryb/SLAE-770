@@ -6,7 +6,7 @@
 # ID: SLAE-770
 #
 
-import socket, sys
+import sys
 
 if len(sys.argv) == 2:
 	l_port = int(sys.argv[1])
