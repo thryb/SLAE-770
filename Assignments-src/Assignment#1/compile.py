@@ -3,8 +3,7 @@
 # Linux x86
 # Author:  thryb
 # Date:    19-07-16
-# Purpose: Bind /bin/zsh to TCP port 9090
-# Size:    96 bytes
+# Purpose: Dirty asm to C & compile
 # ID:      SLAE-770
 # Git:	   https://www.github.com/thryb/SLAE-770
 #
