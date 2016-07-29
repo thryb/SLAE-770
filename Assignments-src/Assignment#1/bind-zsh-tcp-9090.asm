@@ -5,6 +5,7 @@
 ; Purpose: Bind /bin/zsh to TCP port 9090
 ; Size:    96 bytes
 ; ID:      SLAE-770
+; Git:	   https://www.github.com/thryb/SLAE-770
 ;
 
 global _start

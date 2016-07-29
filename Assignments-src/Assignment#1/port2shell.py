@@ -1,9 +1,12 @@
 #!/usr/bin/python
 # 
-# Convert port to shellcode format
-# Author: thryb
-# Date: 15-07-16
-# ID: SLAE-770
+# Linux x86
+# Author:  thryb
+# Date:    15-07-16
+# Purpose: Bind /bin/zsh to TCP port 9090
+# Size:    96 bytes
+# ID:      SLAE-770
+# Git:	   https://www.github.com/thryb/SLAE-770
 #
 
 import sys
