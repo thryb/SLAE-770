@@ -12,7 +12,6 @@ import sys
 import socket
 import struct
 
-
 if len(sys.argv) == 2:
         ip = str(sys.argv[1])
 else:
@@ -23,15 +22,13 @@ def ip2long(ip):
     packedIP = socket.inet_aton(ip)
     return struct.unpack("!L", packedIP)[0]
 
-def long2hex(long):
-    return struct.pack('<Q', long).encode('hex')
-
 long = ip2long(ip)
-hex = long2hex(long)
-hex = hex[:8]
 
-j = iter(hex)
+hex_ip = '{0:04X}'.format(long)
+
+j = iter(hex_ip)
+
 hex = '\\x'.join(a+b for a,b in zip(j, j))
 hex = '\\x' + hex
 
-print "Replace hex IP format with: %s" % hex
+print "Replace hex IP format with: %s" % hex.lower()
