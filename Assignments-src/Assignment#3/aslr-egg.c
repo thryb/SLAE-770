@@ -5,7 +5,7 @@
 ; Author:  thryb
 ; Date:    02-08-16
 ; Purpose: Egghunter shellcode
-; Size:    38 bytes
+; Size:    37 bytes
 ; ID:      SLAE-770
 ; Git:     https://www.github.com/thryb/SLAE-770
 ;
