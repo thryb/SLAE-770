@@ -10,19 +10,17 @@ enc2 = ""
 
 for x in bytearray(shellcode):
 
-	x = x ^ 96 # xor 0x60 
-
 	# if greater than 128 start from beginning
 	if x > 128:
 	        enc += '\\x'
-        	enc += '%02x' %(127 -(256 - x))
+        	enc += '%02x' %((127 -(256 - x)) ^ 95)
         	enc2 += '0x'
-        	enc2 += '%02x,' %(127 -(256 - x))
+        	enc2 += '%02x,' %((127 -(256 - x) ^ 95))
 	else:
         	enc += '\\x'
-        	enc += '%02x'%(x+127)
+        	enc += '%02x'%((x+127) ^ 95)
         	enc2 += '0x'
-        	enc2 += '%02x,' %(x+127)
+        	enc2 += '%02x,' %((x+127) ^ 95)
 
 enc2 = enc2[:-1]
 
