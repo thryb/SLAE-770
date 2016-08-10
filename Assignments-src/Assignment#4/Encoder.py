@@ -28,4 +28,5 @@ print "Encoded shellcode: \n"
 print enc
 print "\n"
 print enc2
-	
+
+print 'Lenght: %d' % len(bytearray(shellcode))

