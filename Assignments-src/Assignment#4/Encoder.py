@@ -15,7 +15,7 @@ for x in bytearray(shellcode):
 	        enc += '\\x'
         	enc += '%02x' %((127 -(256 - x)) ^ 95)
         	enc2 += '0x'
-        	enc2 += '%02x,' %((127 -(256 - x) ^ 95))
+        	enc2 += '%02x,' %((127 -(256 - x)) ^ 95)
 	else:
         	enc += '\\x'
         	enc += '%02x'%((x+127) ^ 95)
