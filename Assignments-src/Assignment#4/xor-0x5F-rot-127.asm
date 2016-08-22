@@ -1,3 +1,13 @@
+;
+; Linux x86
+; Author:  thryb
+; Date:    22-08-16
+; Purpose: XOR 5F & ROT 127 encoder
+; Size:    37 bytes
+; ID:      SLAE-770
+; Git:     https://www.github.com/thryb/SLAE-770
+;
+
 global _start
 section .text
 _start:
