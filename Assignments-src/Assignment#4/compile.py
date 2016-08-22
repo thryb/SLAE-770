@@ -26,9 +26,10 @@ if file_name[-4:] == ".asm":
 	os.system("ld -N -o " + file_name + ".bin " + file_name + ".o")
 
 	print " *** Extracting shellcode."
-	shellcode = os.popen("objdump -d ./" + file_name + ".bin | grep '[0-9a-f]:'" \
-	"|grep -v 'file'|cut -f2 -d:|cut -f1-6 -d' '|tr -s ' '|tr '\t' ' '|sed 's/ $//g'" \
-	"|sed 's/ /\\\\x/g'|paste -d '' -s |sed 's/^/\"/'|sed 's/$/\"/g'").read()
+	# modded to not relay on cut field
+	shellcode = os.popen("for i in `objdump -d ./xor-0x5F-rot-127.bin | tr '\t' ' ' " \
+	"| tr ' ' '\n' | egrep '^[0-9a-f]{2}$' `; do echo -n \"\\x$i\" ; done | paste -d '' -s "
+	"| sed 's/^/\"/' | sed 's/$/\"/g'").read()
 
 	print " *** Building C file."
 	cfile = open('shell.c', "w")
