@@ -23,7 +23,7 @@ if file_name[-4:] == ".asm":
 	os.system("nasm -g -f elf32 -o " + file_name + ".o " + file_name + ".asm")
 
 	print " *** Linking %s. " % file_name
-	os.system("ld -o " + file_name + ".bin " + file_name + ".o")
+	os.system("ld -N -o " + file_name + ".bin " + file_name + ".o")
 
 	print " *** Extracting shellcode."
 	shellcode = os.popen("objdump -d ./" + file_name + ".bin | grep '[0-9a-f]:'" \
