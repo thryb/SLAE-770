@@ -12,7 +12,7 @@ enc2 = ""
 
 for x in bytearray(shellcode):
 
-	# if greater than 128 start from beginning
+	# if greater than 0x80
 	if x > 128:
 	        enc += '\\x'
         	enc += '%02x' %((127 -(256 - x)) ^ 95)
